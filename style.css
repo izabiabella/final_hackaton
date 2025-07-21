@@ -1,0 +1,654 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: "Inter", sans-serif;
+    height: 100%;
+}
+
+/* CABEÇALHO */
+header {
+    background: url('img/fundoPrincipalOfc.png') repeat-x right;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 700px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.logos {
+    position: relative;
+    width: 130px;
+    height: 60px;
+}
+
+.logo-ifro {
+    height: 50px;
+    margin-top: 30px;
+}
+
+.logo-ads {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 50px;
+    width: 152px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font: normal 15px "Inter", sans-serif;
+    position: relative;
+}
+
+/* O "sublinhado" em si */
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0; /* Começa com largura zero */
+    height: 3px; /* Espessura do sublinhado */
+    background-color: #e0e0e0; /* Cor do sublinhado */
+    transition: width 0.3s ease; /* A animação! */
+  }
+  
+  /* Ação ao passar o mouse */
+  nav a:hover::after {
+    width: 100%; 
+  }
+
+  nav a.active::after {
+    width: 100%;
+  }
+  
+
+  nav a.active:hover::after {
+    width: 100%; /* Garante que ele não "pisque" ou mude ao passar o mouse */
+  }
+
+  /* --- Estilos para o Dropdown --- */
+
+  nav ul li {
+    position: relative;
+}
+  
+  /* O submenu em si */
+  .dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; /* Posição absoluta em relação ao LI pai */
+    top: 150%; /* Posiciona abaixo do item pai */
+    left: 0;
+    z-index: 2000;
+    background-color: #f9f9f9; /* Fundo do submenu */
+    border-radius: 5%;
+    min-width: 200px; /* Largura mínima */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra suave */
+    display: none; /* ESCONDE o submenu por padrão */
+    opacity: 0; /* Começa invisível para a transição */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição para o aparecimento */
+    transform: translateY(-10px); /* Leve deslocamento para cima para o efeito */
+  }
+  
+  /* Estilo dos links dentro do submenu */
+  .dropdown-menu li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #ddd; /* Fundo ao passar o mouse nos itens do submenu */
+    border-radius: 5%;
+  }
+  
+  /* Classe que será adicionada pelo JavaScript para mostrar o submenu */
+  .dropdown-menu.show {
+    display: block; /* Mostra o submenu */
+    opacity: 1; /* Torna-o visível */
+    transform: translateY(0); /* Volta à posição original */
+  }
+
+
+/* SEÇÃO HERO */
+.hero {
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.Notebook {
+    max-width: 60%;
+    margin-bottom: 70px;
+    width: 800px;
+    height: auto;
+    z-index: 1;
+}
+
+.celular {
+    display: none;
+    max-width: 60%;
+    margin-bottom: 70px;
+    width: 800px;
+    height: auto;
+    z-index: 1;
+}
+
+.conteudo {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+    text-shadow: 4px 4px 6px #000000;
+
+}
+
+.conteudo h1 {
+    font: bold 60px "Playfair Display", serif;
+    width: 1300px;
+    margin-bottom: 20px;
+}
+
+.conteudo p {
+    font: normal 20px "Inter", sans-serif;
+    margin-bottom: 50px;
+}
+
+.conteudo a {
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font: normal 20px "Inter", sans-serif;
+    text-decoration: none;
+
+}
+
+/* SEÇÃO INFORMAÇÕES */
+.info {
+    background-color: #dbdbdb;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 70px 20px;
+}
+
+.card {
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    height: 300px;
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 10px;
+}
+
+.certificacao {
+    background: url('img/certificacao.png') no-repeat right;
+    background-size: 250px 300px;
+
+}
+
+.duracao {
+    background: url('img/duracao.png') no-repeat right;
+    background-size: 250px 300px;
+}
+
+.funcionamento {
+    background: url('img/funcionamento.png') no-repeat right;
+    background-size: 250px 300px;
+}
+
+
+
+.card img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* SEÇÃO AVALIAÇÃO E TECNOLOGIAS */
+.avaliacao {
+    background-color: #dcdcdc;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Caixa com texto "Aprovado pelo MEC" */
+.caixa-texto {
+    background: url('img/fundoMECofc.png');
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.caixa-texto h2 {
+    margin-bottom: 15px;
+    color: #252525;
+}
+
+.sub-titulo-mec {
+    color: #3c3c3c;
+    font-size: 16px;
+}
+
+.caixa-texto p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #373636;
+}
+
+
+
+.estrelas {
+    width: 130px;
+    margin: 15px auto 5px;
+}
+
+.nota {
+    font-weight: bold;
+    font-size: 30px;
+    color: #1c1c1c;
+}
+
+/* ÍCONES DAS TECNOLOGIAS */
+.tecnologias {
+    text-align: center;
+    max-width: 900px;
+    margin-top: 70px;
+
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.icons img {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tecnologias h2 {
+    margin-bottom: 5px;
+}
+
+.tecnologias h4 {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: normal;
+}
+
+.tecnologias p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* BLOCO DE VÍDEO E MAPA */
+.conheca {
+    background-color: #dddddd;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.conheca img {
+    max-width: 500px;
+}
+
+.bloco {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bloco p {
+    font-family: "Inter", sans-serif;
+    color: #3c3b3b;
+}
+
+.midia {
+    width: 60%;
+    transition: transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.midia:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.video-placeholder,
+.mapa-placeholder {
+    background-color: #555;
+    margin-top: 10px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-placeholder img,
+.mapa-placeholder img {
+    width: 50px;
+}
+
+/* CHAMADA PARA AÇÃO */
+.cta {
+    background: url('img/fundoBottom.png') repeat-x right;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta p {
+    font-size: 25px;
+    color: #111;
+}
+
+.cta h1 {
+    font: bold 40px "Playfair Display", serif;
+    margin: 10px 0 20px;
+    color: #111;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta a {
+    background-color: rgb(197, 197, 197);
+    color: #2a2a2a;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font: normal 20px "Inter", sans-serif;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.cta button:hover {
+    background-color: #a4a4a4;
+}
+
+.ilustracao {
+    margin-top: 30px;
+}
+
+.ilustracao img {
+    max-width: 300px;
+    width: 100%;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #17181d;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.logos-rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 10px;
+}
+
+.logos-rodape img {
+    height: 40px;
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+
+/* Para tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .conteudo h1 {
+        font-size: 2rem;
+        max-width: 600px;
+    }
+
+    .conteudo p {
+        font-size: 1rem;
+    }
+
+    .conteudo button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .Notebook {
+        width: 800px;
+    }
+
+    .info {
+        gap: 20px;
+        padding: 30px 10px;
+    }
+
+    .card {
+        max-width: 25%;
+    }
+}
+
+/* Para celulares (até 768px) */
+@media (max-width: 480px) {
+
+    /* ----- LOGOS ----- */
+    .logo-ads {
+        max-height: 40px;
+        max-width: 90px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    .logo-ifro {
+        height: 30px;
+        margin-left: 110px;
+        margin-top: -200px;
+    }
+
+    .logos {
+        margin-left: -20px;
+        margin-top: 20px;
+    }
+
+    /* ----- MENU ----- */
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 20px;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .menu li {
+        list-style: none;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        font: normal 15px "Inter", sans-serif;
+        padding: 10px 20px;
+
+    }
+
+    nav a::after {
+        bottom: 7px;
+      }
+
+      nav a:hover::after {
+        width: 100%; 
+      }
+
+    /* ----- HERO SECTION ----- */
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        height: auto;
+    }
+
+    .Notebook {
+        display: none;
+    }
+
+    .celular {
+        display: flex;
+        max-width: 100%;
+        margin-top: -190px;
+    }
+
+    .conteudo {
+        position: static;
+        padding: 20px;
+        color: white;
+
+    }
+
+    .conteudo h1 {
+        font-size: 30px;
+        margin-top: -100%;
+        width: 450px;
+    }
+
+    .conteudo p {
+        font-size: 20px;
+        width: 400px;
+        margin-left: 25px;
+    }
+
+    .conteudo button {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+
+    /* ----- INFO CARDS ----- */
+    .info {
+        flex-direction: column;
+        align-items: center;
+        padding: 200px 10px;
+    }
+
+
+
+    .card {
+        position: relative;
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .certificacao,
+    .duracao,
+    .funcionamento {
+        background-position: center;
+        background-size: cover;
+        /* menor pra caber na tela */
+    }
+
+    .caixa-texto {
+        background: url('img/fundoMECofc.png') no-repeat;
+        background-size: 500px 800px;
+    }
+
+    /* ----- CTA / RODAPÉ ----- */
+    .cta h1,
+    .cta p {
+        text-align: center;
+    }
+
+    .logos-rodape {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logos-rodape img {
+        height: 30px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+}
